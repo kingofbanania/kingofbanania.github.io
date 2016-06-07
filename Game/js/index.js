@@ -1,9 +1,58 @@
 var textBox = document.getElementById("text")
 var ans;
-
+var money;
 var BtnBox = document.getElementById("buttons")
 
 var inventory = document.getElementById("inventory");
+
+
+function normBanana(){
+  if (money==10){
+    
+    inventory.innerHTML = "<br><img src='http://png.bychuhe.com/wp-content/uploads/2014/07/banana-png-image-2-300x230.jpg'>"
+    money-10;
+  }
+}
+
+function largeBanana(){
+  
+}
+
+function buyBanana(){
+
+  textBox.innerHTML = " Would you like to buy a normal banana, or a large---banana";
+  
+  BtnBox.innerHTML = "<button onclick='normBanana()'>NORMAL 10 coins</button><button onclick='largeBanana()'>LARGE 20 coins</button>";
+
+}
+
+function billybob() {
+  
+  textBox.innerHTML = " Would you like to buy a banana?!!";
+  
+  BtnBox.innerHTML = "<button onclick='buyBanana()'>SURE</button><button onclick='lost()'>NOO</button>";
+  
+}
+
+function killGob(){
+  money=10;
+  textBox.innerHTML = " The Goblin died. You gain 10 coins";
+  
+  BtnBox.innerHTML = "<button onclick='billybob()'>BillyBobJoe Jr.'s store</button><button onclick='lost()'>LOST</button>";
+  
+}
+
+function getSword() {
+  
+  
+ textBox.innerHTML = " Will you run back and kill the goblin, or get lost";
+  
+  BtnBox.innerHTML = "<button onclick='killGob()'>KILL GOB</button><button onclick='lost()'>LOST</button>";
+  
+  
+        inventory.innerHTML = "<br><img src='http://res.freestockphotos.biz/pictures/15/15567-illustration-of-a-sword-pv.png'>"
+        
+}
 
 function getCoins() {
   textBox.innerHTML = "you get ten coins"
@@ -12,7 +61,7 @@ function getCoins() {
 
 function takeSword() {
   textBox.innerHTML = " You see a sword! Will you pick up the sword, or get killed by the goblin?";
-  BtnBox.innerHTML = "<button onclick=''>GET SWORD</button><button onclick='lost()'>DEAD</button>";
+  BtnBox.innerHTML = "<button onclick='getSword()'>GET SWORD</button><button onclick='die()'>DEAD</button>";
 }
 
 function play() {
